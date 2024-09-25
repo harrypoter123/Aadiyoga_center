@@ -17,11 +17,11 @@ export const navigation = [
       href: "#",
       submenu: [
         { name: "Yoga Classes", href: "/yogaclass" },
-        { name: "Pilates", href: "#pilates" },
-        { name: "Kids yoga", href: "#kidsyoga" },
-        { name: "Yoga Therapy", href: "#yogatherapy" },
-        { name: "Sound Healing", href: "#soundhealing " },
-        { name: "Training course", href: "#trainingcourse" },
+        { name: "Pilates", href: "/pilates" },
+        { name: "Kids yoga", href: "/kidsyoga" },
+        { name: "Yoga Therapy", href: "/yogatherapy" },
+        { name: "Sound Healing", href: "/soundhealing " },
+        { name: "Training course", href: "/trainingcourse" },
       ],
     },
     {

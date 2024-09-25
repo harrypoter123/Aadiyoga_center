@@ -1,8 +1,8 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import { Navigation, Autoplay } from "swiper/modules";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Contact from '../Contact/Contact';
 
 // Example Yoga Images - Replace with your actual image URLs or import them.
 const yogaImages = [
@@ -15,8 +15,29 @@ const yogaImages = [
 ];
 
 const YogaClasses = () => {
+  const settings = {
+    dots: true, // Show dots below for navigation
+    infinite: true, // Infinite scrolling
+    speed: 500, // Animation speed (transition between slides)
+    slidesToShow: 4, // Number of slides to show at a time
+    slidesToScroll: 1, // Number of slides to scroll per swipe
+    autoplay: true, // Autoplay enabled
+    autoplaySpeed: 1800, // Autoplay interval set to 3 seconds (3000ms)
+    arrows: false, // Hide left/right arrows
+  };
+
+  const Letimg ={
+    dots: true,              // Show dots below for navigation
+    infinite: true,          // Infinite scrolling
+    speed: 500,              // Animation speed (transition between slides)
+    slidesToShow: 1,         // Show 1 slide at a time
+    slidesToScroll: 1,       // Scroll 1 slide at a time
+    autoplay: true,          // Autoplay enabled
+    autoplaySpeed: 1800,     // Autoplay interval
+    arrows: false, 
+  }
   return (
-    <section className="bg-white py-12 lg:py-24">
+    <section className="bg-white py-12 lg:py-24 mt-[100px]">
       {/* Header Section */}
       <div className="container mx-auto px-4 lg:px-0">
         <div className="flex flex-col lg:flex-row justify-between items-center lg:space-x-12 mb-12">
@@ -25,6 +46,9 @@ const YogaClasses = () => {
             <h1 className="text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
               Yoga Classes
             </h1>
+            <h2 className="text-2xl font-bold text-black mt-1 mb-1">
+              Private & Group Yoga Sessions
+            </h2>
             <p className="text-lg text-gray-600">
               Experience the beauty of yoga tailored just for you in our private
               sessions, or join our vibrant community in our energizing group
@@ -37,69 +61,81 @@ const YogaClasses = () => {
           </div>
 
           {/* Main Image */}
-          <div className="lg:w-1/2 flex justify-center mt-8 lg:mt-0">
+          {/* <div className="lg:w-1/2 flex justify-center mt-8 lg:mt-0">
             <img
               src="https://aadiyogacenter.com/wp-content/uploads/2024/04/1-4.png"
               alt="Yoga Classes"
               className="rounded-lg shadow-md w-full max-w-md"
             />
-          </div>
-        </div>
-
-        {/* Private & Group Yoga Sessions with Carousel */}
-        <div className="lg:flex lg:items-center lg:justify-between lg:gap-8">
-          {/* Text Section */}
-          {/* <div className="lg:w-1/3 text-center lg:text-left mb-8 lg:mb-0">
-            <h2 className="text-3xl font-semibold text-gray-800 mb-4">
-              Private & Group Yoga Sessions
-            </h2>
-            <div className="flex items-center justify-center lg:justify-start mb-4">
-              <span className="text-3xl text-gray-600">⚜️</span>
-            </div>
           </div> */}
 
-          {/* Swiper Carousel for Images */}
-          <div className="lg:w-2/3">
-            <Swiper
-              modules={[Navigation, Autoplay]}
-              spaceBetween={30}
-              slidesPerView={1}
-              navigation
-              autoplay={{ delay: 3000 }}
-              loop={true}
-              breakpoints={{
-                // When the screen is >= 640px
-                640: {
-                  slidesPerView: 1,
-                },
-                // When the screen is >= 768px
-                768: {
-                  slidesPerView: 2,
-                },
-                // When the screen is >= 1024px
-                1024: {
-                  slidesPerView: 3,
-                },
-              }}
-            >
+          <div className="lg:w-1/2 flex justify-center mt-8 lg:mt-0">
+            <Slider {...Letimg} className="w-full max-w-md">
               {yogaImages.map((image, index) => (
-                <SwiperSlide key={index}>
-                  <div className="w-full h-full">
-                    <img
-                      src={image}
-                      alt={`Yoga Session ${index + 1}`}
-                      className="rounded-lg shadow-lg object-cover w-full h-72"
-                    />
-                  </div>
-                </SwiperSlide>
+                <div key={index}>
+                  <img
+                    src={image}
+                    alt={`Yoga Image ${index + 1}`}
+                    className="rounded-lg shadow-md w-full"
+                  />
+                </div>
               ))}
-            </Swiper>
+            </Slider>
           </div>
         </div>
+
+        {/* Image Carousel */}
+        <div className="carousel-container">
+          <Slider {...settings}>
+            <div className="px-2">
+              <img
+                src="https://aadiyogacenter.com/wp-content/uploads/2024/04/1-4.png"
+                alt="Yoga Image 1"
+                className="w-full rounded-lg"
+              />
+            </div>
+            <div className="px-2">
+              <img
+                src="https://aadiyogacenter.com/wp-content/uploads/2024/04/1-4.png"
+                alt="Yoga Image 2"
+                className="w-full rounded-lg"
+              />
+            </div>
+            <div className="px-2">
+              <img
+                src="https://aadiyogacenter.com/wp-content/uploads/2024/04/1-4.png"
+                alt="Yoga Image 3"
+                className="w-full rounded-lg"
+              />
+            </div>
+            <div className="px-2">
+              <img
+                src="https://aadiyogacenter.com/wp-content/uploads/2024/04/1-4.png"
+                alt="Yoga Image 4"
+                className="w-full rounded-lg"
+              />
+            </div>
+            <div className="px-2">
+              <img
+                src="https://aadiyogacenter.com/wp-content/uploads/2024/04/1-20.png"
+                alt="Yoga Image 5"
+                className="w-full rounded-lg"
+              />
+            </div>
+            <div className="px-2">
+              <img
+                src="https://aadiyogacenter.com/wp-content/uploads/2024/04/1-20.png"
+                alt="Yoga Image 6"
+                className="w-full rounded-lg"
+              />
+            </div>
+          </Slider>
+        </div>
       </div>
+      <Contact/>
     </section>
 
-    
+
   );
 };
 

@@ -46,6 +46,11 @@ import Schedule from "./Pages/Schedule";
 import YogaClasses from "./Pages/Yogaclass";
 import Normalcls from "./Pages/Normalcls";
 import Privatecls from "./Pages/Privatecls";
+import Pilates from './components/Services/Pilates';
+import Kidsyoga from "./components/Services/Kidsyoga";
+import YogaTherapy from "./components/Services/YogaTherapy";
+import Soundhealing from "./components/Services/Soundhealing";
+import Trainingcourses from "./components/Services/Trainingcourses";
 
 const App = () => {
   Aos.init({
@@ -62,6 +67,11 @@ const App = () => {
         <Route path="/yogaclass" element={<YogaClasses />} />
         <Route path="/normalclass" element={< Normalcls/>} />
         <Route path="/privateclass" element={< Privatecls/>} />
+        <Route path="/pilates" element={< Pilates/>} />
+        <Route path="/kidsyoga" element={< Kidsyoga/>} />
+        <Route path="/yogatherapy" element={< YogaTherapy/>} />
+        <Route path="/soundhealing" element={< Soundhealing/>} />
+        <Route path="/trainingcourse" element={< Trainingcourses/>} />
         {/* Add more routes as needed */}
       </Routes>
     </Router>
