@@ -2,6 +2,7 @@ import React from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const Schedule = () => {
   const scheduleData = [
@@ -19,6 +20,16 @@ const Schedule = () => {
     { time: "09:30 AM (75 mins)", saturday: "Full Body Opening", sunday: "Gentle Stretching" },
     { time: "06:30 PM (60 mins)", saturday: "Gentle Stretching", sunday: "Full Body Opening" }
   ];
+
+  const navigate = useNavigate();
+
+  const handledailycls = () => {
+    navigate('/normalclass');  // Redirect to the /schedule page
+  };
+
+  const handleprivatecls = () => {
+    navigate('/privateclass');  // Redirect to the /schedule page
+  };
 
 
   const settings = {
@@ -107,7 +118,7 @@ const Schedule = () => {
         </table>
       </div>
       <div className="text-center mt-8">
-        <button className="bg-teal-500 text-white bg-green-300 py-2 px-6 rounded-lg hover:bg-teal-600 transition-all shadow-lg">Book Classes</button>
+        <button onClick={handledailycls} className="bg-teal-500 text-white bg-green-300 py-2 px-6 rounded-lg hover:bg-teal-600 transition-all shadow-lg">Book Classes</button>
       </div>
 
       {/* Weekend Classes Schedule */}
@@ -133,7 +144,7 @@ const Schedule = () => {
         </table>
       </div>
       <div className="text-center mt-8">
-        <button className="bg-teal-500 text-white bg-green-300 py-2 px-6 rounded-lg hover:bg-teal-600 transition-all shadow-lg">Book Private Class</button>
+        <button onClick={handleprivatecls} className="bg-teal-500 text-white bg-green-300 py-2 px-6 rounded-lg hover:bg-teal-600 transition-all shadow-lg">Book Private Class</button>
       </div>
     </div>
   );
