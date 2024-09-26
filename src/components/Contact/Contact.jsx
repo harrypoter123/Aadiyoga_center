@@ -77,7 +77,7 @@ const Contact = () => {
   };
 
   return (
-    <section className="section-sm lg:pt-[250px]">
+    <section className="section-sm lg:pt-[250px]" id="Contact">
       <div className="container mx-auto px-4">
         <div
           className="flex flex-col lg:flex-row lg:gap-x-[74px] bg-contact bg-no-repeat bg-cover min-h-[600px]"

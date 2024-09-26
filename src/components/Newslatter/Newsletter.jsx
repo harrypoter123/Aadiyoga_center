@@ -1,7 +1,14 @@
 import React from 'react';
 // import Contact from '../components/Contact'
+import { useNavigate } from 'react-router-dom';
 
 const BookingSection = () => {
+
+  const navigate = useNavigate();
+
+  const redirect = ()=>{
+    navigate('/schedule')
+  }
   return (
     <section className="bg-white py-12 px-4 md:py-16 md:px-8 lg:py-24">
       <div className="container mx-auto text-center">
@@ -15,8 +22,8 @@ const BookingSection = () => {
           or simply book an appointment...
         </p>
         <a 
-          href='../components/Contact' 
-          className="inline-block bg-green-300   px-6 py-3 rounded-full shadow-lg hover:text-heading text-white transition-shadow duration-300"
+        onClick={redirect} 
+          className="inline-block bg-green-300   px-6 py-3 rounded-full shadow-lg hover:text-heading text-white transition-shadow duration-300 cursor-pointer"
          
         >
           Write to Us &rarr;

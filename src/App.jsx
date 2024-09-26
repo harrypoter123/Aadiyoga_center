@@ -41,7 +41,7 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./Pages/Home";
 import AboutUs from "./Pages/AboutUs";
-// import Contact from "./Pages/Contact";
+import ScrollTop from './components/ScrollTop/ScrollTop'
 import Schedule from "./Pages/Schedule";
 import YogaClasses from "./Pages/Yogaclass";
 import Normalcls from "./Pages/Normalcls";
@@ -51,6 +51,8 @@ import Kidsyoga from "./components/Services/Kidsyoga";
 import YogaTherapy from "./components/Services/YogaTherapy";
 import Soundhealing from "./components/Services/Soundhealing";
 import Trainingcourses from "./components/Services/Trainingcourses";
+import Services from "./components/Services/Services";
+import Product from "./components/Product/Product";
 
 const App = () => {
   Aos.init({
@@ -60,6 +62,8 @@ const App = () => {
   });
   return (
     <Router>
+
+      <ScrollTop/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<AboutUs />} />
@@ -72,6 +76,8 @@ const App = () => {
         <Route path="/yogatherapy" element={< YogaTherapy/>} />
         <Route path="/soundhealing" element={< Soundhealing/>} />
         <Route path="/trainingcourse" element={< Trainingcourses/>} />
+        <Route path="/services" element={< Services/>} />
+        <Route path="/product" element={< Product/>} />
         {/* Add more routes as needed */}
       </Routes>
     </Router>

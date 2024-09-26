@@ -1,8 +1,15 @@
 import React from "react";
 import { courses } from "./Coursesdata";
 import { BsStarFill, BsStarHalf } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 const Courses = () => {
+
+  const navigate = useNavigate();
+
+  const redirect = ()=>{
+    navigate('/services')
+  }
   return (
     <section className="section-sm lg:section-lg">
       <div className="container mx-auto">
@@ -63,6 +70,7 @@ const Courses = () => {
         </div>
         <div className="flex justify-center">
           <button
+          onClick={redirect}
             className="btn btn-sm btn-orange"
             data-aos="fade-up"
             data-aos-delay="600"

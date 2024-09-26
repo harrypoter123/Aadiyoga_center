@@ -14,7 +14,7 @@ export const navigation = [
     },
     {
       name: "Services",
-      href: "#",
+      href: "/services",
       submenu: [
         { name: "Yoga Classes", href: "/yogaclass" },
         { name: "Pilates", href: "/pilates" },

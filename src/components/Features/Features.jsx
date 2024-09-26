@@ -7,6 +7,7 @@ import "../../video.scss";
 
 import { BsPlayCircleFill } from "react-icons/bs";
 
+
 const Features = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { title1, title2, description, btnText } = features;
